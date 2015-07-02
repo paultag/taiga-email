@@ -16,12 +16,8 @@ api.auth(
 )
 project = api.projects.get(os.environ.get('TAIGA_PROJECT', '2'))
 
-project.add_issue(
+project.add_user_story(
     body['Subject'],
-    project.priorities.get(name='Low').id,
-    project.issue_statuses.get(name='New').id,
-    project.issue_types.get(name='Question').id,
-    project.severities.get(name='Minor').id,
     description="""\
 From: {fro}
 Message-Id: {messageid}
